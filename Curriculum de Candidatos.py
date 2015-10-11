@@ -1,48 +1,49 @@
-print                                                      ('---------------------------------------------------')
-print                                                      ('------------CURRICULUM DE CANDIDATOS---------------')
-print                                                      ('---------------------------------------------------')
-curiculos = []
+print ('---------------------------------------------------')
+print ('------------CURRICULUM DE CANDIDATOS---------------')
+print ('---------------------------------------------------')
+curriculos = []
+a = 'l'
+quantidade_curriculos = int (input ("Digite a quantidade de curiculos a ser quardada: "))
 
 while a != '0':
 
-	qtd_c = int (input ("Digite a quantidade de curiculos a ser quardada"))
-
-	for iqtd_c in range (qtd_c):    
-
-		print         ("Opção 1 - Criar curriculum")
-		print         ("Opção 2 - Visualizar curriculo dos  canditato")
-		print         ("Opção 3 - Visualizar curriculo de um canditato")
-		print         ("Opção 4 - Sair programa")
+	print  ("Opção 1 - Criar curriculum")
+	print  ("Opção 2 - Visualizar curriculo dos  canditato")
+	print  ("Opção 3 - Visualizar curriculo de um canditato")
+	print  ("Opção 0 - Sair programa")
 			
-		opcao = input ("Entre com uma das opções acima: ")
+	opcao = input ("Entre com uma das opções acima: ")
 
-		if opcao == '1':
+	if opcao == '1':
+		
+		for iquantidade_curriculo in range (quantidade_curriculos):
 			curriculo = []
-			for icc in range (qtd_c):
-				print ('CANDIDATO %D' % (qtd_c + 1))
-				nome_candidato = input 	(print ('Digite o nome do candidato %d: ' %(icc+1)) 
-				data_nacimento = input	(print ('Digite a data de nacimento do candidato %d: ' %(icc+1)))
-				endereço = input 		(print ('Digite o endereço do candidato %d: ' %(icc+1)))
-				curriculo.append (nome_candidato, data_nacimento, endereço)
-				curiculos.append (curriculo)
+			nome = input ("Entre com o nome do candidato %i: " % (iquantidade_curriculo+1))
+			curriculo.append (nome)
+			endereço = input ("Entre com o endereço do candidato %i: " % (iquantidade_curriculo+1))
+			curriculo.append (endereço)
+			data_nacimento = input ("Entre com o data de nacimento do candidato %i: " % (iquantidade_curriculo+1))
+			curriculo.append (data_nacimento)
+			curriculos.append (curriculo)
 
-		elif opcao == '2':
-				for ivc in range (qtd_c):
+	elif opcao == "2":
 
-					print ('CANDIDATO %i' % (ivc + 1))
+		pass
 
-					for ivce in range (3)
+	elif opcao == '3':
 
-					print ('Nome candidato %d: %s' % ((ivc+1), (curriculos [ivc] [0] )))
-					print ('Data de nacimento do candidato %d: %s' % ((ivc+1), (curriculos [ivc] [1] )))
-					print ('Endereço candidato %d: %s' % ((ivc+1), (curriculos [ivc] [2] )))
+		print ("Qual candidato deseja visualizar?")
 
-		elif opcao == '3':
-			candidato = int (input ("Digite o número de indentificação do canditato: ")) 
+		for iquantidade_curriculo in range (quantidade_curriculos):
+			print ("Candidato %s numeração %d" % (curriculos [iquantidade_curriculo] [0], (iquantidade_curriculo + 1))
 				
-			print ('Nome candidato %d: %s' % ((candidato), (curriculos [canditato] [0] )))
-			print ('Data de nacimento do candidato %d: %s' % ((ivc+1), (curriculos [candidato] [1] )))
-			print ('Endereço candidato %d: %s' % ((ivc+1), (curriculos [candidato] [2] )))
+		#Com cada indice do "for" vai imprimir um candidato diferente com sua numeração em sequencia
 
-		elif opcao == '4':
-			a = 0
+        curriculo_individual = int (input ("Escolha um dos candidatos: "))
+
+		print ('Nome: %s' %(curriculos [curriculo_individual] [0]))
+		print ('Endereço: %s' %(curriculos [curriculo_individual] [1]))
+		print ('Data de nacimento: %s' %(curriculos [curriculo_individual] [2]))
+			
+	elif opcao == '0':
+		a = "0"
